@@ -1,0 +1,221 @@
+.App {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1380px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .actions-container {
+    margin-bottom: 15px;
+    .btn {
+      border: 1px solid rgba(38, 80, 153, 0.12);
+      padding: 10px;
+      background-color: transparent;
+      cursor: pointer;
+
+      &.btn-grid {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &.btn-list {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+  
+      &.active {
+        background: rgb(98, 89, 195) none repeat scroll 0% 0%;
+        border: 1px solid rgb(98, 89, 195);
+      }
+    }
+  }
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(350px, auto);
+
+    .card {
+      border: 1px solid rgb(219, 219, 219);
+      border-radius: 4px;
+  
+      .card-image {
+        width: 100%;
+        height: 55%;
+        background-size: cover;
+        background-position: center;
+        background-color: #696969;
+        position: relative;
+  
+        .card-image-overlay {
+          width: calc(100% - 20px);
+          height: calc(28% - 10px);
+          background-color: rgba(0, 0, 0, 0.25);
+          position: absolute;
+          bottom: 0px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 5px 10px;
+  
+          .card-financial-text {
+            color: #fff;
+            font-weight: 300;
+            padding: 0;
+            margin: 0;
+          }
+  
+          .card-physical-text {
+            color: #fff;
+            font-size: 11px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .card-row-container {
+        height: 15%;
+        border-bottom: 1px solid rgb(219, 219, 219);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        .card-row-title {
+          font-size: 12px;
+          font-weight: 300;
+        }
+
+        .card-row-text {
+          margin: 0;
+          padding: 0;
+          font-weight: 300;
+        }
+        
+        &.no-border {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .list-container {
+    .table-view {
+      border-collapse: collapse;
+      width: 100%;
+
+      tbody {
+        tr {
+          height: 85px;
+          border-bottom: 1px solid #D8D8D8;
+          th, td {
+            span {
+              font-weight: 300;
+              font-size: 16px;
+            }
+          }
+
+          td {
+
+            a {
+              text-decoration: none;
+              color: rgb(123, 114, 214);
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            
+            &:first-child {
+              display: flex;
+              height: 85px;
+              justify-content: space-around;
+              align-items: center;
+            }
+
+            .property-image { 
+              width: 40px;
+              height: 40px;
+              border-radius: 20px;
+            }
+            
+            .property-address-text {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .details-view-container {
+
+    .address-row-container {
+      display: flex;
+      align-items: center;
+      height: 50px;
+
+      .back-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      h4 {
+        font-weight: 500;
+        line-height: 25px;
+        margin: 0;
+      }
+  
+      h5 {
+        font-weight: 300;
+        line-height: 25px;
+        margin: 0;
+      }
+    }
+
+
+    .carousel-container {
+      .variable-width {
+        width: 500px;
+        
+        .slick-arrow {
+          background: rgba(0,0,0,0.3);
+          height: 50px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.slick-prev {
+            left: 0;
+            z-index: 3000;
+          }
+    
+          &.slick-next {
+            right: 0;
+            z-index: 3000;
+          }
+
+          &::before {
+            content: "";
+          }
+        }
+      }
+
+      .slick-image {
+        width: 520px;
+        height: 350px;
+        object-fit: cover;
+      }
+    }
+  }
+}
